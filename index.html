@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>Top 40 Countries by population</title>
+	<meta name="description" content="Top 40 Countries by population">
+	<meta name="author" content="Pavan Malladi">
+	<meta name="generator" content="slidify" />
+	
+	<!-- LOAD STYLE SHEETS -->
+	<link rel="stylesheet" href="libraries/frameworks/html5slides/default/styles.css">
+	<link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />  <link rel="stylesheet" href = "assets/css/ribbons.css">
+  
+</head>
+<body style='display: none'>
+	<section class='slides layout-regular template-regular'>
+     <article class="" id="slide-1" style="background:;">
+  <h3>App that lists the top 40 Countries by population</h3>
+  <h3>Slides</h3>
+
+<ul>
+<li>How the App works</li>
+<li>Code for rendering maps</li>
+<li>An example map</li>
+<li>Link to the App</li>
+</ul>
+
+</article>
+
+<article class="class" id="id" style="background:;">
+  <h3>PopulationRank</h3>
+  <h3>My App lists the top 40 countries ranked by population (most populous to least)</h3>
+
+<ul>
+<li>It takes in 1 input, in the form of a Slider</li>
+<li>Moving the slider will allow the User to select a country by Rank</li>
+<li>A CSV with the names, ranks of the Countries (sorted on rank) is read in</li>
+<li>This input (rank) is then processed to fetch the Country Name and Map</li>
+<li>The Country Name and Map are displayed</li>
+</ul>
+
+</article>
+
+<article class="class" id="id" style="background:;">
+  <h3>Code for Rendering Maps</h3>
+  <h3>The .csv containing ranks and names of countries is read in and used as input to map function.</h3>
+
+<pre><code class="r">fileName &lt;- &quot;C:/Users/MALPA06/Documents/R Workspace/Module_9/Project/population/Countries_And_Population.csv&quot;
+popData &lt;- read.csv2(fileName, sep = &quot;,&quot;)
+output$map &lt;- renderPlot({map(&#39;worldHires&#39;,popData$Country[input$populationRank])})
+</code></pre>
+
+<pre><code>## Error in eval(expr, envir, enclos): could not find function &quot;renderPlot&quot;
+</code></pre>
+
+</article>
+
+<article class="class" id="id" style="background:;">
+  <h3>An example Map</h3>
+  <h3>China</h3>
+
+<p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+</article>
+
+  </section>
+</body>
+  <!-- LOAD JAVASCRIPTS  -->
+	<script src='libraries/frameworks/html5slides/default/slides.js'></script>
+	<!-- LOAD HIGHLIGHTER JS FILES -->
+	<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+	 
+	</html>
